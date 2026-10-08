@@ -50,3 +50,10 @@ def test_full_walkthrough_wins():
          "e", "n", "up", "use oil can", "use matches")
     assert game.over
     assert "lit" in game.flags
+
+
+def test_main_loop_stops_on_quit():
+    out = []
+    commands = iter(["look", "quit"])
+    main(input_fn=lambda _: next(commands), output_fn=out.append)
+    assert out[-1] == "Goodbye."
