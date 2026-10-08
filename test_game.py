@@ -35,3 +35,10 @@ def test_take_and_drop():
     assert "driftwood" in game.inventory
     game.handle("drop driftwood")
     assert "driftwood" in game.room["items"]
+
+
+def test_matches_need_oil_first():
+    game = Game()
+    play(game, "n", "w", "take brass key", "take matches", "e", "n", "up")
+    assert "smoulders" in game.handle("use matches")
+    assert not game.over
