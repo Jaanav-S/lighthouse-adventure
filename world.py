@@ -40,3 +40,10 @@ ROOMS = {
         "items": [],
     },
 }
+
+ITEMS = {
+    "driftwood": "A bleached, twisted branch. Not much use.",
+    "oil can": "A dented can, still half full of lamp oil.",
+    "brass key": "A heavy key stamped with a tiny lighthouse.",
+    "matches": "A tin of matches, miraculously dry.",
+}
