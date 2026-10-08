@@ -47,3 +47,8 @@ ITEMS = {
     "brass key": "A heavy key stamped with a tiny lighthouse.",
     "matches": "A tin of matches, miraculously dry.",
 }
+
+# Exits that need an item to pass: (room, direction) -> item
+LOCKED = {
+    ("path", "north"): "brass key",
+}
