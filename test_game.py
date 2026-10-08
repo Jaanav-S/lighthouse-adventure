@@ -27,3 +27,11 @@ def test_locked_door_needs_key():
     assert game.handle("n") == "It's locked."
     play(game, "w", "take brass key", "e", "n")
     assert game.location == "lighthouse"
+
+
+def test_take_and_drop():
+    game = Game()
+    game.handle("take driftwood")
+    assert "driftwood" in game.inventory
+    game.handle("drop driftwood")
+    assert "driftwood" in game.room["items"]
