@@ -19,3 +19,9 @@ The world lives in `world.py` as plain dictionaries: rooms, their exits,
 the items lying around and which exits are locked. `game.py` holds the
 engine, which knows nothing about the island and could run any world with
 the same shape.
+
+## Writing your own world
+
+Copy `world.py`, change the rooms and items, and point `Game` at it. Locked
+exits list the item that opens them, and the `goal` entry says which item
+has to be used where to win.
