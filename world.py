@@ -52,3 +52,18 @@ ITEMS = {
 LOCKED = {
     ("path", "north"): "brass key",
 }
+
+# Using an item in a room can change the world. Each entry may require
+# other items to be in the inventory and sets a flag when it succeeds.
+USES = {
+    ("oil can", "lamp room"): {"sets": "oiled", "message": "You fill the lamp's reservoir with oil."},
+    ("matches", "lamp room"): {
+        "needs_flag": "oiled",
+        "sets": "lit",
+        "message": "The wick catches and the lamp blazes out over the sea!",
+        "fail": "You strike a match, but the dry wick just smoulders. The lamp needs oil.",
+    },
+}
+
+GOAL_FLAG = "lit"
+WIN_TEXT = "Far out on the water, a ship's horn answers. You are going home."
