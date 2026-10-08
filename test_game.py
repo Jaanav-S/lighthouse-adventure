@@ -15,3 +15,15 @@ def test_movement_and_aliases():
     assert game.location == "wreck"
     game.handle("go west")
     assert game.location == "beach"
+
+
+def test_blocked_exit():
+    assert Game().handle("go south") == "You can't go that way."
+
+
+def test_locked_door_needs_key():
+    game = Game()
+    play(game, "n")
+    assert game.handle("n") == "It's locked."
+    play(game, "w", "take brass key", "e", "n")
+    assert game.location == "lighthouse"
