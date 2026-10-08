@@ -110,3 +110,18 @@ class Game:
             self.over = True
             return "Goodbye."
         return "I don't understand that."
+
+
+def main(input_fn=input, output_fn=print):
+    game = Game()
+    output_fn(game.describe())
+    while not game.over:
+        try:
+            command = input_fn("> ")
+        except EOFError:
+            break
+        output_fn(game.handle(command))
+
+
+if __name__ == "__main__":
+    main()
