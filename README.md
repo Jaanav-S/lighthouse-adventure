@@ -25,3 +25,9 @@ the same shape.
 Copy `world.py`, change the rooms and items, and point `Game` at it. Locked
 exits list the item that opens them, and the `goal` entry says which item
 has to be used where to win.
+
+## Tests
+
+```
+python -m pytest
+```
