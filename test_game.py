@@ -42,3 +42,11 @@ def test_matches_need_oil_first():
     play(game, "n", "w", "take brass key", "take matches", "e", "n", "up")
     assert "smoulders" in game.handle("use matches")
     assert not game.over
+
+
+def test_full_walkthrough_wins():
+    game = Game()
+    play(game, "e", "take oil can", "w", "n", "w", "take brass key", "take matches",
+         "e", "n", "up", "use oil can", "use matches")
+    assert game.over
+    assert "lit" in game.flags
