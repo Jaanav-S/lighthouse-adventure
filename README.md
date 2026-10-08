@@ -12,3 +12,10 @@ python game.py
 Commands: `look`, `go <direction>` (or just `n`, `s`, `e`, `w`, `up`,
 `down`), `take <item>`, `drop <item>`, `use <item>`, `inventory`, `help`,
 `quit`.
+
+## How it is built
+
+The world lives in `world.py` as plain dictionaries: rooms, their exits,
+the items lying around and which exits are locked. `game.py` holds the
+engine, which knows nothing about the island and could run any world with
+the same shape.
